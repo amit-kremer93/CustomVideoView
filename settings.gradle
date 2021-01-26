@@ -1,0 +1,3 @@
+include ':videoPlayer'
+include ':app'
+rootProject.name = "AndroidProject"
