@@ -19,9 +19,10 @@ public class UrlToVideo extends FrameLayout {
     private Context mContext;
     private Button mPlay;
     private Button mStop;
+    private Button mPause;
     private VideoView mVideoView;
     private Uri mVideoUrl;
-    private MediaController mediaController;
+    private CustomMediaController mediaController;
     private final String TAG = "myVideoView";
 
 
@@ -39,10 +40,12 @@ public class UrlToVideo extends FrameLayout {
         mVideoView = findViewById(R.id.my_videoView);
         mPlay = findViewById(R.id.my_start);
         mStop = findViewById(R.id.my_stop);
-//        mediaController = new MediaController(mContext);
-//        mVideoView.setMediaController(mediaController);
+        mPause=findViewById(R.id.my_pause);
+        mediaController = new CustomMediaController(mContext);
+        mVideoView.setMediaController(mediaController);
         mPlay.setOnClickListener(startClickListener);
         mStop.setOnClickListener(stopClickListener);
+        mPause.setOnClickListener(pauseClickListener);
     }
 
     public UrlToVideo(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
@@ -65,9 +68,20 @@ public class UrlToVideo extends FrameLayout {
         @Override
         public void onClick(View v) {
             Log.d(TAG, "STOP clicked!");
+            mVideoView.seekTo(0);
+            mVideoView.pause();
+
+        }
+    };
+    View.OnClickListener pauseClickListener = new OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Log.d(TAG, "STOP clicked!");
             mVideoView.pause();
         }
     };
+
+
 
     public void setUrlToPlay(String url) {
         mVideoUrl = Uri.parse(url);

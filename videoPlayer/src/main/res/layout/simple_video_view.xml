@@ -11,8 +11,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:elevation="10dp"
         android:layout_weight="8"
+        android:elevation="10dp"
         app:cardCornerRadius="20dp">
 
         <VideoView
@@ -40,5 +40,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Stop" />
+        <Button
+            android:id="@+id/my_pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="pause" />
+
     </LinearLayout>
 </LinearLayout>
