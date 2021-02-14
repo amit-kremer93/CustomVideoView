@@ -1,6 +1,7 @@
-
+<p float="left">
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1200px-Android_robot.svg.png"  width="200">
 <img src="https://cdn.pixabay.com/photo/2016/02/01/12/33/play-1173551_1280.png"  width="200"><br>
+</p>
 
 # CustomVideoView
 
