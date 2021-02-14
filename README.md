@@ -1,6 +1,6 @@
 <p float="left">
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1200px-Android_robot.svg.png"  width="200">
-<img src="https://cdn.pixabay.com/photo/2016/02/01/12/33/play-1173551_1280.png"  width="200"><br>
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Android_robot.svg/1200px-Android_robot.svg.png"  width="250">
+<img src="https://cdn.pixabay.com/photo/2016/02/01/12/33/play-1173551_1280.png"  width="250"><br>
 </p>
 
 # CustomVideoView
@@ -45,7 +45,7 @@ private UrlToVideo mVideo = findViewById(R.id.video);
 mVideo.setUrlToPlay("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4");
 ```
 <p float="left">
-<img src="pictures/1.png"  width="200">
-<img src="pictures/2.png"  width="200">
-<img src="pictures/3.png"  width="200">
+<img src="pictures/1.png"  width="300">
+<img src="pictures/2.png"  width="300">
+<img src="pictures/3.png"  width="300">
 </p>
