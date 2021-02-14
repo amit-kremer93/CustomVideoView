@@ -5,8 +5,10 @@ import android.media.AudioManager;
 import android.net.Uri;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
@@ -39,7 +41,7 @@ public class UrlToVideo extends FrameLayout {
         mVideoView = findViewById(R.id.my_videoView);
 
         //volume gesture. swipe right or left in order to change the volume
-        mVideoView.setOnTouchListener(new OnGestureListener(mContext){
+        mVideoView.setOnTouchListener(new OnGestureListener(mContext) {
             @Override
             public void onSwipeRight() {
                 super.onSwipeRight();
@@ -50,16 +52,14 @@ public class UrlToVideo extends FrameLayout {
             public void onSwipeLeft() {
                 super.onSwipeLeft();
                 changeVolume(sides.LEFT);
-
-
             }
 
             @Override
             public void onClick() {
                 super.onClick();
-                if(mediaController.isShown()){
+                if (mediaController.isShown()) {
                     mediaController.hide();
-                }else{
+                } else {
                     mediaController.show();
                 }
 
@@ -78,6 +78,7 @@ public class UrlToVideo extends FrameLayout {
 
     /**
      * takes string url and parse it into URI for the videoView
+     *
      * @param url
      */
     public void setUrlToPlay(String url) {
@@ -89,18 +90,32 @@ public class UrlToVideo extends FrameLayout {
 
     /**
      * change the video volume according the gesture
+     *
      * @param side
      */
     private void changeVolume(sides side) {
-        int l = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
-
+        audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
         currentVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
-        Log.d(TAG, "current volume: "+currentVolume);
+        Log.d(TAG, "current volume: " + currentVolume);
+        String str = "";
         if (side == sides.RIGHT) {
-            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume + 1, AudioManager.FLAG_PLAY_SOUND);
+            if (currentVolume == 15) {
+                str = "Max Volume!";
+            } else {
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume + 1, AudioManager.FLAG_PLAY_SOUND);
+                str = "Volume +1";
+            }
         } else {
-            audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume - 1, AudioManager.FLAG_PLAY_SOUND);
+            if (currentVolume == 0) {
+                str = "Mim Volume!";
+            } else {
+                audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume - 1, AudioManager.FLAG_PLAY_SOUND);
+                str = "Volume -1";
+            }
         }
+        Toast toast = Toast.makeText(mContext, str, Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 0, 0);
+        toast.show();
     }
 }
 

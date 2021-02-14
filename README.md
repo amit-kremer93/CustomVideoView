@@ -16,17 +16,17 @@ minSdkVersion 23
 Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
 ```
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 ## Dependency
 Add this to your module's `build.gradle` file (Note: version should match the jitpack badge above)
 ```
 dependencies {
-	   implementation 'com.github.amit-kremer93:CustomVideoView:1.0.0'
+	implementation 'com.github.amit-kremer93:CustomVideoView:1.0.0'
 }
 ```
 
@@ -44,6 +44,11 @@ Start use it:
 private UrlToVideo mVideo = findViewById(R.id.video);
 mVideo.setUrlToPlay("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4");
 ```
+#Gesture Handling
+On the videoView, swipe right to increase volume and swipe left to decrease it
+
+#Orientation Handling
+When the phone is going into landscape mode, the video size changes automatically to match full screen
 <p float="left">
 <img src="pictures/1.png"  width="300">
 <img src="pictures/2.png"  width="300">
