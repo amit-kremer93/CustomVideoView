@@ -44,10 +44,10 @@ Start use it:
 private UrlToVideo mVideo = findViewById(R.id.video);
 mVideo.setUrlToPlay("https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4");
 ```
-#Gesture Handling
+# Gesture Handling
 On the videoView, swipe right to increase volume and swipe left to decrease it
 
-#Orientation Handling
+# Orientation Handling
 When the phone is going into landscape mode, the video size changes automatically to match full screen
 <p float="left">
 <img src="pictures/1.png"  width="300">
