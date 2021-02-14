@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#4CAF50"
+    android:background="@drawable/controller_background"
     android:orientation="vertical">
 
     <LinearLayout
@@ -12,28 +12,32 @@
         android:gravity="center"
         android:paddingTop="4dip"
         android:orientation="horizontal">
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/FAB_bw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            android:src="@drawable/ic_baseline_fast_rewind_24" />
 
-        <com.github.clans.fab.FloatingActionMenu
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/FAB_start"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:menu_fab_size="mini"/>
-        <com.github.clans.fab.FloatingActionMenu
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:menu_fab_size="mini"/>
-        <com.github.clans.fab.FloatingActionMenu
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:menu_fab_size="mini"/>
-        <com.github.clans.fab.FloatingActionMenu
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:menu_fab_size="mini"/>
-        <com.github.clans.fab.FloatingActionMenu
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:menu_fab_size="mini"/>
+            app:fab_size="mini"
+            android:src="@drawable/ic_baseline_play_arrow_24" />
 
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/FAB_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            android:src="@drawable/ic_baseline_stop_24" />
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/FAB_fw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            android:src="@drawable/ic_baseline_fast_forward_24" />
 
     </LinearLayout>
 
@@ -53,13 +57,12 @@
             android:paddingRight="4dip" />
 
         <SeekBar
-            android:id="@+id/mediacontroller_progress"
-            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/SKB_progress"
             android:layout_width="0dip"
             android:layout_weight="1"
             android:layout_height="32dip" />
 
-        <TextView android:id="@+id/time"
+        <TextView android:id="@+id/total_time"
             android:textSize="14sp"
             android:textStyle="bold"
             android:paddingTop="4dip"
