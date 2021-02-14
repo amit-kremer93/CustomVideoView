@@ -38,14 +38,14 @@ public class UrlToVideo extends FrameLayout {
         inflater.inflate(R.layout.simple_video_view, this, true);
 
         mVideoView = findViewById(R.id.my_videoView);
-        mPlay = findViewById(R.id.my_start);
-        mStop = findViewById(R.id.my_stop);
-        mPause=findViewById(R.id.my_pause);
-        mediaController = new CustomMediaController(mContext);
+//        mPlay = findViewById(R.id.my_start);
+//        mStop = findViewById(R.id.my_stop);
+//        mPause=findViewById(R.id.my_pause);
+        mediaController = new CustomMediaController(mContext, mVideoView);
         mVideoView.setMediaController(mediaController);
-        mPlay.setOnClickListener(startClickListener);
-        mStop.setOnClickListener(stopClickListener);
-        mPause.setOnClickListener(pauseClickListener);
+//        mPlay.setOnClickListener(startClickListener);
+//        mStop.setOnClickListener(stopClickListener);
+//        mPause.setOnClickListener(pauseClickListener);
     }
 
     public UrlToVideo(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
