@@ -53,6 +53,17 @@ public class UrlToVideo extends FrameLayout {
 
 
             }
+
+            @Override
+            public void onClick() {
+                super.onClick();
+                if(mediaController.isShown()){
+                    mediaController.hide();
+                }else{
+                    mediaController.show();
+                }
+
+            }
         });
 
     }
